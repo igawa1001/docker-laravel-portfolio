@@ -10,7 +10,8 @@ class HealthCheckResultController extends Controller
 {
     public function index()
     {
-        return view('health_check_results.index');
+        $healthCheckResults = HealthCheckResult::all();
+        return view('health_check_results.index', compact('healthCheckResults'));
     }
 
     public function import(Request $request)
