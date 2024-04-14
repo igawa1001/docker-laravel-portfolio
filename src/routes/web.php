@@ -15,3 +15,4 @@ use App\Http\Controllers\HealthCheckResultController;
 */
 
 Route::get('/', [HealthCheckResultController::class, 'index'])->name('top');
+Route::post('/health_check_results/import', [HealthCheckResultController::class, 'import'])->name('health_check_results.import');

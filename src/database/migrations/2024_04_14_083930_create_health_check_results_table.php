@@ -15,20 +15,19 @@ return new class extends Migration
     {
         Schema::create('health_check_results', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('uuid')->unique();
-            $table->string('insurance_provider')->nullable(); // 委託元保険者
-            $table->string('affiliated_insurer')->nullable(); // 所属保険者
-            $table->string('insurer_number')->nullable(); // 保険者番号
-            $table->string('insurance_symbol')->nullable(); // 保険証記号
-            $table->string('insurance_number')->nullable(); // 保険証番号
-            $table->string('kanji_name')->nullable(); // 漢字氏名
-            $table->string('kana_last_name')->nullable(); // カナ（姓）
-            $table->string('kana_first_name')->nullable(); // カナ（名）
+            $table->string('insurance_provider'); // 委託元保険者
+            $table->string('affiliated_insurer'); // 所属保険者
+            $table->string('insurer_number'); // 保険者番号
+            $table->string('insurance_symbol'); // 保険証記号
+            $table->string('insurance_number'); // 保険証番号
+            $table->string('kanji_name'); // 漢字氏名
+            $table->string('kana_last_name'); // カナ（姓）
+            $table->string('kana_first_name'); // カナ（名）
             $table->string('support_level')->nullable(); // 支援レベル
-            $table->string('gender')->nullable(); // 性別
-            $table->date('birth')->nullable(); // 生年月日
-            $table->integer('age')->nullable(); // 年齢
+            $table->string('gender'); // 性別
+            $table->date('birth'); // 生年月日
+            $table->integer('age'); // 年齢
             $table->date('medical_examination_date')->nullable(); // 健診日
             $table->decimal('height', 5, 1)->nullable(); // 身長
             $table->decimal('weight_at_medical_examination', 5, 1)->nullable(); // 健診時体重
