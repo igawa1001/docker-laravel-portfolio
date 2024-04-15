@@ -16,3 +16,4 @@ use App\Http\Controllers\HealthCheckResultController;
 
 Route::get('/', [HealthCheckResultController::class, 'index'])->name('top');
 Route::post('/health_check_results/import', [HealthCheckResultController::class, 'import'])->name('health_check_results.import');
+Route::get('/health_check_results/search', [HealthCheckResultController::class, 'search'])->name('health_check_results.search');

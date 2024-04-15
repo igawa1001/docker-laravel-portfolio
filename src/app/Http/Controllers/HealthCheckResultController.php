@@ -10,8 +10,31 @@ class HealthCheckResultController extends Controller
 {
     public function index()
     {
-        $healthCheckResults = HealthCheckResult::all();
-        return view('health_check_results.index', compact('healthCheckResults'));
+        return view('health_check_results.index');
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $page = $request->input('page', 1);
+        $perPage = 10;
+
+        $query = HealthCheckResult::query();
+
+        if (!empty($keyword)) {
+            $query->where(function ($q) use ($keyword) {
+                $q->where('insurance_symbol', 'like', "%{$keyword}%")
+                    ->orWhere('insurance_number', 'like', "%{$keyword}%")
+                    ->orWhere('kanji_name', 'like', "%{$keyword}%")
+                    ->orWhere('kana_last_name', 'like', "%{$keyword}%")
+                    ->orWhere('kana_first_name', 'like', "%{$keyword}%")
+                    ->orWhere('email', 'like', "%{$keyword}%");
+            });
+        }
+
+        $results = $query->paginate($perPage, ['*'], 'page', $page);
+
+        return response()->json($results);
     }
 
     public function import(Request $request)

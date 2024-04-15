@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/health_check_results/search', [HealthCheckResultController::class, 'search'])->name('health_check_results.search');
