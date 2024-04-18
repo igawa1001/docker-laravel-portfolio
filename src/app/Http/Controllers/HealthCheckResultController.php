@@ -130,9 +130,12 @@ class HealthCheckResultController extends Controller
 
     private function formatTime($row, $headers, $field)
     {
-        $timeString = $row[array_search($field, $headers)];
-        $time = \DateTime::createFromFormat('H:i:s', $timeString);
-        return $time !== false ? $time->format('H:i:s') : null;
+        $index = array_search($field, $headers);
+        if ($index !== false && $row[$index] !== '') {
+            $time = date('H:i:s', strtotime($row[$index]));
+            return $time !== '00:00:00' ? $time : null;
+        }
+        return null;
     }
 
 }

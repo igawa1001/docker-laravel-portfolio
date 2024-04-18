@@ -38,50 +38,50 @@
                     <table class="table table-responsive table-striped" id="healthCheckResultsTable">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>UUID</th>
-                                <th>委託元保険者</th>
-                                <th>所属保険者</th>
-                                <th>保険者番号</th>
-                                <th>保険証記号</th>
-                                <th>保険証番号</th>
-                                <th>漢字氏名</th>
-                                <th>カナ（姓）</th>
-                                <th>カナ（名）</th>
-                                <th>支援レベル</th>
-                                <th>性別</th>
-                                <th>生年月日</th>
-                                <th>年齢</th>
-                                <th>健診日</th>
-                                <th>身長</th>
-                                <th>健診時体重</th>
-                                <th>BMI</th>
-                                <th>健診時腹囲</th>
-                                <th>収縮期1</th>
-                                <th>収縮期2</th>
-                                <th>収縮期その他</th>
-                                <th>拡張期1</th>
-                                <th>拡張期2</th>
-                                <th>拡張期その他</th>
-                                <th>中性脂肪</th>
-                                <th>空腹時中性脂肪</th>
-                                <th>随時中性脂肪</th>
-                                <th>HDL</th>
-                                <th>LDL</th>
-                                <th>GOT</th>
-                                <th>GPT</th>
-                                <th>γ-GT</th>
-                                <th>空腹時血糖</th>
-                                <th>随時血糖</th>
-                                <th>HBA1C</th>
-                                <th>服薬1</th>
-                                <th>服薬2</th>
-                                <th>服薬3</th>
-                                <th>喫煙</th>
-                                <th>初回面談日</th>
-                                <th>初回面談時間</th>
-                                <th>メールアドレス</th>
-                                <th>対象者の特徴</th>
+                                <th class="text-nowrap">ID</th>
+                                <th class="text-nowrap">UUID</th>
+                                <th class="text-nowrap">委託元保険者</th>
+                                <th class="text-nowrap">所属保険者</th>
+                                <th class="text-nowrap">保険者番号</th>
+                                <th class="text-nowrap">保険証記号</th>
+                                <th class="text-nowrap">保険証番号</th>
+                                <th class="text-nowrap">漢字氏名</th>
+                                <th class="text-nowrap">カナ（姓）</th>
+                                <th class="text-nowrap">カナ（名）</th>
+                                <th class="text-nowrap">支援レベル</th>
+                                <th class="text-nowrap">性別</th>
+                                <th class="text-nowrap">生年月日</th>
+                                <th class="text-nowrap">年齢</th>
+                                <th class="text-nowrap">健診日</th>
+                                <th class="text-nowrap">身長</th>
+                                <th class="text-nowrap">健診時体重</th>
+                                <th class="text-nowrap">BMI</th>
+                                <th class="text-nowrap">健診時腹囲</th>
+                                <th class="text-nowrap">収縮期1</th>
+                                <th class="text-nowrap">収縮期2</th>
+                                <th class="text-nowrap">収縮期その他</th>
+                                <th class="text-nowrap">拡張期1</th>
+                                <th class="text-nowrap">拡張期2</th>
+                                <th class="text-nowrap">拡張期その他</th>
+                                <th class="text-nowrap">中性脂肪</th>
+                                <th class="text-nowrap">空腹時中性脂肪</th>
+                                <th class="text-nowrap">随時中性脂肪</th>
+                                <th class="text-nowrap">HDL</th>
+                                <th class="text-nowrap">LDL</th>
+                                <th class="text-nowrap">GOT</th>
+                                <th class="text-nowrap">GPT</th>
+                                <th class="text-nowrap">γ-GT</th>
+                                <th class="text-nowrap">空腹時血糖</th>
+                                <th class="text-nowrap">随時血糖</th>
+                                <th class="text-nowrap">HBA1C</th>
+                                <th class="text-nowrap">服薬1</th>
+                                <th class="text-nowrap">服薬2</th>
+                                <th class="text-nowrap">服薬3</th>
+                                <th class="text-nowrap">喫煙</th>
+                                <th class="text-nowrap">初回面談日</th>
+                                <th class="text-nowrap">初回面談時間</th>
+                                <th class="text-nowrap">メールアドレス</th>
+                                <th class="text-nowrap">対象者の特徴</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -128,50 +128,50 @@
             results.forEach(result => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                <td>${result.id}</td>
-                <td>${result.uuid}</td>
-                <td>${result.insurance_provider}</td>
-                <td>${result.affiliated_insurer}</td>
-                <td>${result.insurer_number}</td>
-                <td>${result.insurance_symbol}</td>
-                <td>${result.insurance_number}</td>
-                <td>${result.kanji_name}</td>
-                <td>${result.kana_surname}</td>
-                <td>${result.kana_name}</td>
-                <td>${result.support_level}</td>
-                <td>${result.gender}</td>
-                <td>${result.date_of_birth ? new Date(result.date_of_birth).toLocaleDateString('ja-JP') : ''}</td>
-                <td>${result.age}</td>
+                <td>${result.id || ''}</td>
+                <td>${result.uuid || ''}</td>
+                <td>${result.insurance_provider || ''}</td>
+                <td>${result.affiliated_insurer || ''}</td>
+                <td>${result.insurer_number || ''}</td>
+                <td>${result.insurance_symbol || ''}</td>
+                <td>${result.insurance_number || ''}</td>
+                <td>${result.kanji_name || ''}</td>
+                <td>${result.kana_last_name || ''}</td>
+                <td>${result.kana_first_name || ''}</td>
+                <td>${result.support_level || ''}</td>
+                <td>${result.gender || ''}</td>
+                <td>${result.birth ? new Date(result.birth).toLocaleDateString('ja-JP') : ''}</td>
+                <td>${result.age || ''}</td>
                 <td>${result.medical_examination_date ? new Date(result.medical_examination_date).toLocaleDateString('ja-JP') : ''}</td>
-                <td>${result.height}</td>
-                <td>${result.weight_at_medical_examination}</td>
-                <td>${result.bmi}</td>
-                <td>${result.abdominal_circumference_at_medical_examination}</td>
-                <td>${result.systolic_1}</td>
-                <td>${result.systolic_2}</td>
-                <td>${result.systolic_other}</td>
-                <td>${result.diastolic_1}</td>
-                <td>${result.diastolic_2}</td>
-                <td>${result.diastolic_other}</td>
-                <td>${result.neutral_fat}</td>
-                <td>${result.fasting_neutral_fat}</td>
-                <td>${result.occasional_neutral_fat}</td>
-                <td>${result.hdl}</td>
-                <td>${result.ldl}</td>
-                <td>${result.got}</td>
-                <td>${result.gpt}</td>
-                <td>${result.γ_gt}</td>
-                <td>${result.fasting_blood_sugar}</td>
-                <td>${result.occasional_blood_sugar}</td>
-                <td>${result.hba1c}</td>
-                <td>${result.medication_1}</td>
-                <td>${result.medication_2}</td>
-                <td>${result.medication_3}</td>
-                <td>${result.smoking}</td>
+                <td>${result.height || ''}</td>
+                <td>${result.weight_at_medical_examination || ''}</td>
+                <td>${result.bmi || ''}</td>
+                <td>${result.abdominal_circumference_at_medical_examination || ''}</td>
+                <td>${result.systolic_1 || ''}</td>
+                <td>${result.systolic_2 || ''}</td>
+                <td>${result.systolic_other || ''}</td>
+                <td>${result.diastolic_1 || ''}</td>
+                <td>${result.diastolic_2 || ''}</td>
+                <td>${result.diastolic_other || ''}</td>
+                <td>${result.neutral_fat || ''}</td>
+                <td>${result.fasting_neutral_fat || ''}</td>
+                <td>${result.occasional_neutral_fat || ''}</td>
+                <td>${result.hdl || ''}</td>
+                <td>${result.ldl || ''}</td>
+                <td>${result.got || ''}</td>
+                <td>${result.gpt || ''}</td>
+                <td>${result.γ_gt || ''}</td>
+                <td>${result.fasting_blood_sugar || ''}</td>
+                <td>${result.occasional_blood_sugar || ''}</td>
+                <td>${result.hba1c || ''}</td>
+                <td>${result.medication_1 || ''}</td>
+                <td>${result.medication_2 || ''}</td>
+                <td>${result.medication_3 || ''}</td>
+                <td>${result.smoking || ''}</td>
                 <td>${result.initial_interview_date ? new Date(result.initial_interview_date).toLocaleDateString('ja-JP') : ''}</td>
-                <td>${result.initial_interview_time}</td>
-                <td>${result.email}</td>
-                <td>${result.subject_characteristics}</td>
+                <td>${result.initial_interview_time || ''}</td>
+                <td>${result.email || ''}</td>
+                <td>${result.subject_characteristics || ''}</td>
         `;
                 healthCheckResultsTable.appendChild(row);
             });
