@@ -21,5 +21,12 @@ services:
     volumes:
       - db-store:/var/lib/mysql
 
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1026:1025"
+      - "8025:8025"
+
 volumes:
   db-store:
+
