@@ -55,4 +55,6 @@
 ### 開発環境構築後、http://localhost:8084/　にアクセス時の、想定表示画面
 ![FireShot Capture 286 -  - localhost](https://github.com/igawa1001/docker-laravel-portfolio/assets/36191355/b9f4560f-b0a4-4599-ada4-0505f5e94033)
 
+### MailHog受信確認
+![image](https://github.com/igawa1001/docker-laravel-portfolio/assets/36191355/eb54c3d0-93e6-41f6-82eb-738ccd43c4ca)
 
