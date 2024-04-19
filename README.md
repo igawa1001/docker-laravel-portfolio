@@ -8,6 +8,9 @@
 - Dockerとdocker-composeを利用して開発環境を構築
     - 参考記事
         - https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4
+        - (キャッシュを使用せずビルド)　docker-compose build --no-cache
+        - (コンテナ起動)　docker-compose up -d
+        - (コンテナに入る)　docker compose exec app bash
 - **データモデルの設計**
     - CSVファイルの項目からカラム名を決定
     - 特定保健指導対象者の定期健康診断結果を管理する想定のため、`health_check_results`テーブル用のマイグレーションを作成し、対応するモデルを実装
@@ -49,7 +52,4 @@
             - スケジューラは、`schedule`メソッドで定義されたスケジュールをチェック
             - 毎日10時になると、`emails:send-daily`コマンド実行
          
-### コマンド
-- (キャッシュを使用せずビルド)　docker-compose build --no-cache
-- (コンテナ起動)　docker-compose up -d
-- (コンテナに入る)　docker compose exec app bash
+
