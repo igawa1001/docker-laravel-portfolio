@@ -11,6 +11,7 @@
         - (キャッシュを使用せずビルド)　docker-compose build --no-cache
         - (コンテナ起動)　docker-compose up -d
         - (コンテナに入る)　docker compose exec app bash
+        - [http://localhost:8084/](http://localhost:8084/)
 - **データモデルの設計**
     - CSVファイルの項目からカラム名を決定
     - 特定保健指導対象者の定期健康診断結果を管理する想定のため、`health_check_results`テーブル用のマイグレーションを作成し、対応するモデルを実装
@@ -51,5 +52,7 @@
             - crontabで1分ごとにLaravelのスケジューラ起動
             - スケジューラは、`schedule`メソッドで定義されたスケジュールをチェック
             - 毎日10時になると、`emails:send-daily`コマンド実行
-         
+### 開発環境構築後、http://localhost:8084/　にアクセス時の、想定表示画面
+![FireShot Capture 286 -  - localhost](https://github.com/igawa1001/docker-laravel-portfolio/assets/36191355/b9f4560f-b0a4-4599-ada4-0505f5e94033)
+
 
