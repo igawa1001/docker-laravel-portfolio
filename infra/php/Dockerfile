@@ -13,4 +13,21 @@ RUN apt-get update && \
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 
+# スクリプトファイルをコピー
+COPY entrypoint.sh /tmp/
+COPY cron.sh /root/script/
+
+# cronをインストール
+RUN apt-get update && \
+    apt-get install -y cron
+
+# crontabに登録
+RUN echo '* * * * * sh /root/script/cron.sh' > /var/spool/cron/crontabs/root
+RUN crontab /var/spool/cron/crontabs/root
+
+# エントリーポイントの設定
+ENTRYPOINT ["/tmp/entrypoint.sh"]
+
+ENV TZ=Asia/Tokyo
+
 WORKDIR /data
